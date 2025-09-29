@@ -1,6 +1,5 @@
 body {
   height: 100vh;
-  background-color: #588157;
   background-size: cover;
   background-position: center;
   font-family: "Montserrat", sans-serif;
@@ -10,6 +9,12 @@ footer {
   font-size: x-small;
   margin-top: 10px;
   color: rgb(156, 156, 156);
+}
+
+.hero {
+  background: url("/www/images/back-dev.png") no-repeat center center/cover;
+  height: 100vh; /* altura total do ecrã */
+  position: relative;
 }
 
 li {
@@ -33,13 +38,16 @@ header {
 
 /* Navbar */
 .navbar {
+  position: absolute; /* navbar em cima da imagem */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 60px;
-  margin: 0;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
+  backdrop-filter: blur(15px);
   justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .navbar .logo {
@@ -91,6 +99,10 @@ header {
 
 .dropdown_menu.open {
   height: 240px;
+}
+
+.aboutme {
+  margin-top: 70px;
 }
 
 /* RESPONSIVO */

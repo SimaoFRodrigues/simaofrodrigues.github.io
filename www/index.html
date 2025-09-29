@@ -34,18 +34,27 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="logo"><a href="a">Simão Rodrigues</a></div>
-      <ul class="links">
-        <li><a href="hero">Home</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="skills">Skills</a></li>
-        <li><a href="projects">Projects</a></li>
-        <li><a href="contact">Contacts</a></li>
-      </ul>
-      <div class="toggle_btn">
-        <i class="bi bi-list"></i>
+    <header class="hero">
+      <div class="navbar">
+        <div class="logo"><a href="a">Simão Rodrigues</a></div>
+        <ul class="links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contacts</a></li>
+        </ul>
+        <div class="toggle_btn">
+          <i class="bi bi-list"></i>
+        </div>
       </div>
+    </header>
+
+    <div class="aboutme">
+      <div class="texto">
+        <h1>About me</h1>
+      </div>
+      <div>eu sou o Simão, ...</div>
     </div>
 
     <div class="dropdown_menu">
@@ -58,23 +67,19 @@
 
     <script>
       const toggleBtn = document.querySelector(".toggle_btn");
-      const toggleBtnIcon = document.querySelector(".toggle_btn i");
       const dropdownMenu = document.querySelector(".dropdown_menu");
+
       toggleBtn.onclick = function () {
         dropdownMenu.classList.toggle("open");
-        const isOpen = dropdownMenu.classList.contains("open");
-        toggleBtnIcon.classList = isOpen ? "bi bi-x" : "bi bi-list";
-      };
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const navbarToggler = document.querySelector(".navbar-toggler");
-
-        if (navbarToggler) {
-          navbarToggler.addEventListener("click", function () {
-            navbarToggler.classList.toggle("change");
-          });
+        // troca o ícone do botão
+        const icon = toggleBtn.querySelector("i");
+        if (dropdownMenu.classList.contains("open")) {
+          icon.className = "bi bi-x"; // ícone X
+        } else {
+          icon.className = "bi bi-list"; // ícone hamburguer
         }
-      });
+      };
     </script>
   </body>
 </html>
