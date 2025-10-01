@@ -1,19 +1,10 @@
 body {
-  background: url("/www/images/back-dev.png") rgba(0, 0, 0, 0.3);
+  background: url("/images/back-dev.png") rgba(0, 0, 0, 0.3);
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
-}
-
-footer {
-  font-size: small;
-  position: fixed;
-  color: rgb(0, 0, 0);
-  left: 0;
-  bottom: 0;
-  width: 100%;
 }
 
 .text-shadow {
@@ -22,7 +13,7 @@ footer {
 
 @media (max-width: 991px) {
   .sidebar {
-    background-color: rgba(113, 150, 12, 0.548);
+    background-color: rgba(35, 13, 88, 0.548);
     backdrop-filter: blur(10px);
   }
 }
