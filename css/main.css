@@ -7,6 +7,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.skills {
+  background: url("/images/back-skills.png") rgba(0, 0, 0, 0.3);
+}
+
 .text-shadow {
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.829);
 }
