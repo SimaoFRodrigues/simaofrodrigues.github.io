@@ -49,6 +49,12 @@ body {
   border-radius: 8px;
 }
 
+.container1 {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+}
+
 @media (max-width: 991px) {
   .sidebar {
     background-color: rgba(35, 13, 88, 0.548);
