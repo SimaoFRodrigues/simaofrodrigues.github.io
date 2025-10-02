@@ -43,6 +43,12 @@ body {
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.829);
 }
 
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.559);
+  padding: 10px;
+  border-radius: 8px;
+}
+
 @media (max-width: 991px) {
   .sidebar {
     background-color: rgba(35, 13, 88, 0.548);
@@ -50,6 +56,67 @@ body {
   }
 
   img[alt="Foto de Simão Rodrigues"] {
+    max-width: 250px;
+  }
+
+  .container1 {
+    text-align: center;
+    font-size: small;
+  }
+
+  img[alt="Foto Desktop"] {
+    margin-top: 20px;
+    max-width: 50%;
+  }
+
+  .cont-skills {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .fonte-titulos-mob {
+    font-size: 30px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem; /* menor em mobile */
+  }
+
+  .carousel-caption p {
+    font-size: 0.7rem;
+  }
+
+  .carousel-item {
+    text-align: center;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto; /* mantém proporção */
+    object-fit: contain; /* imagem completa */
+    padding-bottom: 60px; /* espaço reservado para legenda */
+  }
+
+  .carousel-caption {
+    position: static; /* deixa de ficar em cima da imagem */
+    margin-top: -50px; /* opcional: aproxima do fundo da imagem */
+    color: #fff;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: -30px; /* <- distância do fundo */
+  }
+
+  img[alt="car-system"] {
+    max-width: 250px;
+  }
+
+  img[alt="car-sensores"] {
+    max-width: 250px;
+  }
+
+  img[alt="car-tasks"] {
     max-width: 250px;
   }
 }
