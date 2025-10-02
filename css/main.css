@@ -55,6 +55,10 @@ body {
   text-align: left;
 }
 
+.loc-icon {
+  color: #e23939;
+}
+
 @media (max-width: 991px) {
   .sidebar {
     background-color: rgba(35, 13, 88, 0.548);
