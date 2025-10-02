@@ -58,7 +58,7 @@ body {
 .loc-icon {
   color: #e23939;
 }
-
+/* Responsividade Mobile */
 @media (max-width: 991px) {
   .sidebar {
     background-color: rgba(35, 13, 88, 0.548);
@@ -89,7 +89,7 @@ body {
   }
 
   .carousel-caption h5 {
-    font-size: 1rem; /* menor em mobile */
+    font-size: 1rem;
   }
 
   .carousel-caption p {
@@ -102,20 +102,20 @@ body {
 
   .carousel-item img {
     width: 100%;
-    height: auto; /* mantém proporção */
-    object-fit: contain; /* imagem completa */
-    padding-bottom: 60px; /* espaço reservado para legenda */
+    height: auto;
+    object-fit: contain;
+    padding-bottom: 60px;
   }
 
   .carousel-caption {
-    position: static; /* deixa de ficar em cima da imagem */
-    margin-top: -50px; /* opcional: aproxima do fundo da imagem */
+    position: static;
+    margin-top: -50px;
     color: #fff;
   }
 
   .carousel-indicators {
     position: absolute;
-    bottom: -30px; /* <- distância do fundo */
+    bottom: -30px;
   }
 
   img[alt="car-system"] {
