@@ -1,5 +1,5 @@
-function enviarMensagem() {
-  const email = document.getElementById(exampleFormControlInput1);
-  const msg = document.getElementById(exampleFormControlTextarea1);
-  alert("Mensagem guardada!");
+function guardarMensagem() {
+  const email = document.getElementById("exampleFormControlInput1").value;
+  const mensagem = document.getElementById("exampleFormControlTextarea1").value;
+  alert("Mensagem enviada com sucesso! 🎉");
 }

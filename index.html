@@ -438,62 +438,85 @@
         </div>
       </section>
     </div>
-    <!-- Contacts secção-->
+    <!-- Contacts secção -->
     <div>
       <section id="contacts" class="p-3 text-white bg-contactos mt-5">
         <div class="container text-white text-shadow">
           <div class="row align-items-center">
             <h2 class="mt-5 text-center"><strong>Contacts</strong></h2>
             <p class="text-center text-shadow text-white">
-              Have a question or want to work together?
+              Whether it's for a project, collaboration, or just to say hi — I'd
+              love to connect!
             </p>
           </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Message</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
+
+          <!-- FORMSPREE FORM -->
+          <form
+            action="https://formspree.io/f/mdkwlzav"
+            method="POST"
+            class="mt-4"
+          >
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Message</label
+              >
+              <textarea
+                name="message"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-outline-light mt-3">
+              Send <i class="bi bi-send"></i>
+            </button>
+          </form>
+
+          <!-- Social links -->
+          <div class="text-center mt-4">
+            <a href="mailto:simao3175@gmail.com" class="text-white fs-3 mx-3"
+              ><i class="bi bi-envelope-fill"></i
+            ></a>
             <a
-              href="#"
-              class="btn btn-outline-light mt-4"
-              onclick="enviarMensagem()"
-            >
-              Send <i class="bi bi-file-earmark-arrow-down"></i>
-            </a>
-            <div class="p-3 text-white bg-contactos mt-5">
-              <i class="bi bi-envelope"></i> simao3175@gmail.com
-            </div>
-            <div class="p-3 text-white bg-contactos">
-              <i class="bi bi-instagram"></i> simaofrr
-            </div>
-            <div class="p-3 text-white bg-contactos">
-              <i
-                class="bi bi-linkedin"
-                href="https://www.linkedin.com/in/simão-rodrigues-0b3522235"
-              ></i>
-              Simão Rodrigues
-            </div>
-            <div class="p-3 text-white bg-contactos mb-5">
-              <i class="bi bi-github"></i> SimaoFRodrigues
-            </div>
+              href="https://www.instagram.com/simaofrr"
+              target="_blank"
+              class="text-white fs-3 mx-3"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/simão-rodrigues-0b3522235"
+              target="_blank"
+              class="text-white fs-3 mx-3"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/SimaoFRodrigues"
+              target="_blank"
+              class="text-white fs-3 mx-3"
+              ><i class="bi bi-github"></i
+            ></a>
           </div>
         </div>
       </section>
+    </div>
+    <div id="alerta" class="alerta">
+      <p id="alerta-texto"></p>
     </div>
     <footer class="text-white text-center bg-dark">
       @2025 All righs reserved. Simão Rodrigues
