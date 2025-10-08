@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(180deg, #290332, #2f0756, #0d1b2a, #0d1b2a);
-  color: #f5f5f5; /* texto legível */
+  color: #f5f5f5;
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
@@ -10,8 +10,8 @@ body {
 
 .inicio {
   background: url("/images/back-dev.png") no-repeat center center;
-  background-size: cover; /* cobre toda a área */
-  min-height: 100vh; /* ocupa a altura toda da janela */
+  background-size: cover;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
