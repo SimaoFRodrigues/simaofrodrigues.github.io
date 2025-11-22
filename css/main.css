@@ -53,9 +53,47 @@ body {
   text-align: left;
 }
 
+.to-top {
+  font-size: 2rem;
+}
+
+.to-top:hover {
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.icon-insta:hover {
+  text-shadow: 0 0 15px #ff00aa;
+}
+
+.icon-git:hover {
+  text-shadow: 0 0 15px #ffffff;
+}
+
+.icon-linkedin:hover {
+  text-shadow: 0 0 15px #008cff;
+}
+
+.icon-email:hover {
+  text-shadow: 0 0 15px #e5ff00;
+}
+
 .loc-icon {
   color: #e23939;
 }
+
+.anim {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: moveright 1s linear forwards;
+}
+
+@keyframes moveright{
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 /* Responsividade Mobile */
 @media (max-width: 991px) {
   .sidebar {
