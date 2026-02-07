@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-PT">
   <head>
-    <title>Simão's Portfolio</title>
+    <title>Portefólio de Simão Rodrigues</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -87,19 +87,33 @@
                 class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3"
               >
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#home">Home</a>
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="#home"
+                    data-i18n="nav.home"
+                    >Início</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
+                  <a class="nav-link" href="#about" data-i18n="nav.about"
+                    >Sobre</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#skills">Skills</a>
+                  <a class="nav-link" href="#skills" data-i18n="nav.skills"
+                    >Competências</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#projects">Projects</a>
+                  <a class="nav-link" href="#projects" data-i18n="nav.projects"
+                    >Projetos</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#contacts">Contacts</a>
+                  <a class="nav-link" href="#contacts" data-i18n="nav.contacts"
+                    >Contacto</a
+                  >
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -108,8 +122,9 @@
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
+                    data-i18n="nav.socials"
                   >
-                    Socials
+                    Redes
                   </a>
                   <ul class="dropdown-menu">
                     <li>
@@ -118,7 +133,8 @@
                         href="https://www.instagram.com/simaofrr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >Instagram <i class="bi bi-instagram"></i
+                        ><span data-i18n="socials.instagram">Instagram</span>
+                        <i class="bi bi-instagram"></i
                       ></a>
                     </li>
                     <li>
@@ -127,7 +143,8 @@
                         href="https://www.linkedin.com/in/simão-rodrigues-0b3522235"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >Linkedin <i class="bi bi-linkedin"></i
+                        ><span data-i18n="socials.linkedin">Linkedin</span>
+                        <i class="bi bi-linkedin"></i
                       ></a>
                     </li>
                     <li>
@@ -136,10 +153,45 @@
                         href="https://github.com/SimaoFRodrigues"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >Github <i class="bi bi-github"></i
+                        ><span data-i18n="socials.github">Github</span>
+                        <i class="bi bi-github"></i
                       ></a>
                     </li>
                   </ul>
+                </li>
+                <li class="nav-item d-flex align-items-center ms-lg-3">
+                  <span
+                    class="nav-link mb-0 pe-2"
+                    data-i18n="nav.language"
+                  ></span>
+                  <div class="language-switcher">
+                    <button
+                      type="button"
+                      class="lang-btn"
+                      data-lang="pt"
+                      data-i18n-aria-label="nav.languagePt"
+                    >
+                      <img
+                        class="lang-flag"
+                        src="images/pt.svg"
+                        alt="Portugal"
+                      />
+                      <span class="lang-label">PT</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="lang-btn"
+                      data-lang="en"
+                      data-i18n-aria-label="nav.languageEn"
+                    >
+                      <img
+                        class="lang-flag"
+                        src="images/gb.svg"
+                        alt="Reino Unido"
+                      />
+                      <span class="lang-label">EN</span>
+                    </button>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -161,14 +213,17 @@
             class="text-shadow text-bg-blur px-3 rounded"
             style="font-size: 1em"
           >
-            I'm <strong>Simão Rodrigues</strong>
+            <span data-i18n="hero.line1">Eu sou o</span>
+            <strong>Simão Rodrigues</strong>
           </h1>
           <h1
             class="text-shadow text-bg-blur px-3 rounded"
             style="font-size: 1em"
           >
-            and I'm a future
-            <strong class="font-monospace">Software Developer</strong>
+            <span data-i18n="hero.line2.prefix">e sou um futuro</span>
+            <strong class="font-monospace" data-i18n="hero.line2.role"
+              >Desenvolvedor de Software</strong
+            >
           </h1>
         </section>
       </div>
@@ -181,30 +236,37 @@
             <!-- Coluna do texto -->
             <div class="col-lg-8">
               <h2 class="mt-5 mb-3 texto-verde-lima fonte-titulos-mob">
-                <strong>About me</strong>
+                <strong data-i18n="about.title">Sobre mim</strong>
               </h2>
               <p class="">
-                <i class="bi bi-geo-alt-fill loc-icon"></i> Based in Setúbal,
-                Portugal
+                <i class="bi bi-geo-alt-fill loc-icon"></i>
+                <span data-i18n="about.location"
+                  >Baseado em Setúbal, Portugal</span
+                >
               </p>
-              <p class="fs-5">
-                Hello! My name is Simão Ferro Rodrigues and I am a second-year
-                student in the Bachelor's degree in Computer Engineering and
-                Multimedia at ISEL. I have a strong interest in software
-                development and in creating creative solutions that have a real
-                impact. This portfolio is my space to share projects, skills,
-                and experiences in the technological field.
-              </p>
-
-              <p class="fs-5">
-                My goal is to continuously grow as a
-                <em>Software Developer</em>, focusing on good programming
-                practices, innovation, and teamwork. I am always motivated to
-                learn new technologies and contribute to challenging projects.
+              <p class="fs-5" data-i18n="about.paragraph1">
+                Olá! O meu nome é Simão Rodrigues e sou estudante do segundo ano
+                da Licenciatura em Engenharia Informática e Multimédia no ISEL.
+                Tenho um forte interesse no desenvolvimento de software e em
+                criar soluções criativas com impacto real. Este portefólio é o
+                meu espaço para partilhar projetos, competências e experiências
+                na área tecnológica.
               </p>
 
-              <p class="card-text">
-                Would you like to learn more about me? Download my CV.
+              <p class="fs-5">
+                <span data-i18n="about.goal.prefix"
+                  >O meu objetivo é crescer continuamente como</span
+                >
+                <em data-i18n="about.goal.role">Desenvolvedor de Software</em>,
+                <span data-i18n="about.goal.suffix"
+                  >focando-me em boas práticas de programação, inovação e
+                  trabalho em equipa. Estou sempre motivado para aprender novas
+                  tecnologias e contribuir para projetos desafiantes.</span
+                >
+              </p>
+
+              <p class="card-text" data-i18n="about.cvPrompt">
+                Gostaria de saber mais sobre mim? Descarregue o meu CV.
               </p>
               <a
                 href="./assets/CV_SimaoRodrigues_PT.pdf"
@@ -253,19 +315,19 @@
             <h2
               class="text-center mb-3 mt-1 texto-verde-lima fonte-titulos-mob"
             >
-              <strong>Skills</strong>
+              <strong data-i18n="skills.title">Competências</strong>
             </h2>
-            <p class="text-center mb-4 fs-5">
-              Which programming languages do I have the most knowledge in?
+            <p class="text-center mb-4 fs-5" data-i18n="skills.subtitle">
+              Em que linguagens de programação tenho mais conhecimentos?
             </p>
             <div class="col-md-3 cont-skills">
               <div class="card h-100 shadow border-0">
                 <img src="images/java-card.png" class="card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title"><strong>Java</strong></h5>
-                  <p class="card-text">
-                    Knowledge in syntax, OOP, and good programming practices for
-                    academic and personal projects.
+                  <p class="card-text" data-i18n="skills.java">
+                    Conhecimentos de sintaxe, OOP e boas práticas de programação
+                    para projetos académicos e pessoais.
                   </p>
                   <div
                     class="progress"
@@ -288,9 +350,9 @@
                 <img src="images/python-card.png" class="card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title"><strong>Python</strong></h5>
-                  <p class="card-text">
-                    Experience in data science projects involving datasets, OOP,
-                    and data visualization.
+                  <p class="card-text" data-i18n="skills.python">
+                    Experiência em projetos de ciência de dados com datasets,
+                    OOP e visualização de dados.
                   </p>
                   <div
                     class="progress"
@@ -317,11 +379,13 @@
                 />
                 <div class="card-body">
                   <h5 class="card-title">
-                    <strong>HTML, CSS and Javascript</strong>
+                    <strong data-i18n="skills.webTitle"
+                      >HTML, CSS e JavaScript</strong
+                    >
                   </h5>
-                  <p class="card-text">
-                    Web development using Bootstrap, DOM manipulation and event
-                    handling.
+                  <p class="card-text" data-i18n="skills.web">
+                    Desenvolvimento web com Bootstrap, manipulação do DOM e
+                    tratamento de eventos.
                   </p>
                   <div
                     class="progress"
@@ -347,9 +411,9 @@
                 />
                 <div class="card-body">
                   <h5 class="card-title"><strong>Arduino</strong></h5>
-                  <p class="card-text">
-                    Development of system prototypes with sensors, LEDs, and
-                    microcontrollers.
+                  <p class="card-text" data-i18n="skills.arduino">
+                    Desenvolvimento de protótipos de sistemas com sensores, LEDs
+                    e microcontroladores.
                   </p>
                   <div
                     class="progress"
@@ -379,11 +443,11 @@
         <div class="container text-white text-shadow">
           <div class="row align-items-center">
             <h2 class="mb-3 texto-verde-lima fonte-titulos-mob">
-              <strong>Projects</strong>
+              <strong data-i18n="projects.title">Projetos</strong>
             </h2>
-            <p class="fs-5">
-              Below you can find some of the projects I have worked on, both
-              academic and personal
+            <p class="fs-5" data-i18n="projects.subtitle">
+              Abaixo pode encontrar alguns dos projetos em que trabalhei, tanto
+              académicos como pessoais
             </p>
           </div>
           <div id="carouselExampleCaptions" class="carousel slide">
@@ -429,10 +493,14 @@
                   car="car-system"
                 />
                 <div class="carousel-caption d-block">
-                  <h5><strong>Audio Visualization System</strong></h5>
-                  <p>
-                    Web App developed in Javascript, HTML and CSS, with multiple
-                    audio visualizations for your music/voice.
+                  <h5>
+                    <strong data-i18n="projects.audio.title"
+                      >Sistema de Visualização Áudio</strong
+                    >
+                  </h5>
+                  <p data-i18n="projects.audio.desc">
+                    Aplicação web desenvolvida em JavaScript, HTML e CSS, com
+                    várias visualizações de áudio para a sua música/voz.
                   </p>
                 </div>
               </div>
@@ -443,10 +511,14 @@
                   car="car-system"
                 />
                 <div class="carousel-caption d-block">
-                  <h5><strong>Work Order Management System</strong></h5>
-                  <p>
-                    Developed in Java for desktop, including a Login Screen and
-                    a MySQL database
+                  <h5>
+                    <strong data-i18n="projects.workorder.title"
+                      >Sistema de Gestão de Ordens de Trabalho</strong
+                    >
+                  </h5>
+                  <p data-i18n="projects.workorder.desc">
+                    Desenvolvido em Java para desktop, incluindo um ecrã de
+                    login e uma base de dados MySQL
                   </p>
                 </div>
               </div>
@@ -457,8 +529,15 @@
                   alt="dashboard_quarto"
                 />
                 <div class="carousel-caption d-block">
-                  <h5><strong>Portugal Elections Dashboard</strong></h5>
-                  <p>2024 Portugal Elections Dashboard implemented in Quarto</p>
+                  <h5>
+                    <strong data-i18n="projects.elections.title"
+                      >Dashboard das Eleições em Portugal</strong
+                    >
+                  </h5>
+                  <p data-i18n="projects.elections.desc">
+                    Dashboard das Eleições de 2024 em Portugal implementado em
+                    Quarto
+                  </p>
                 </div>
               </div>
               <div class="carousel-item">
@@ -468,10 +547,14 @@
                   alt="car-tasks"
                 />
                 <div class="carousel-caption d-block">
-                  <h5><strong>Personal Task Manager</strong></h5>
-                  <p>
-                    Personal task manager in Java for desktop, with a Login
-                    system implemented in Java Swing
+                  <h5>
+                    <strong data-i18n="projects.tasks.title"
+                      >Gestor de Tarefas Pessoal</strong
+                    >
+                  </h5>
+                  <p data-i18n="projects.tasks.desc">
+                    Gestor de tarefas pessoal em Java para desktop, com sistema
+                    de login implementado em Java Swing
                   </p>
                 </div>
               </div>
@@ -482,10 +565,14 @@
                   alt="car-sensores"
                 />
                 <div class="carousel-caption d-block">
-                  <h5><strong>Smart Access Control</strong></h5>
-                  <p>
-                    Simulation of a Smart Access Control system for the Lisbon
-                    Metro, implemented in Arduino.
+                  <h5>
+                    <strong data-i18n="projects.smart.title"
+                      >Controlo de Acesso Inteligente</strong
+                    >
+                  </h5>
+                  <p data-i18n="projects.smart.desc">
+                    Simulação de um sistema de controlo de acesso inteligente
+                    para o Metro de Lisboa, implementado em Arduino.
                   </p>
                 </div>
               </div>
@@ -500,7 +587,9 @@
                 class="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span class="visually-hidden" data-i18n="carousel.prev"
+                >Anterior</span
+              >
             </button>
             <button
               class="carousel-control-next"
@@ -512,7 +601,9 @@
                 class="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span class="visually-hidden" data-i18n="carousel.next"
+                >Seguinte</span
+              >
             </button>
           </div>
         </div>
@@ -523,10 +614,15 @@
       <section id="contacts" class="p-3 text-white bg-contactos mt-5">
         <div class="container text-white text-shadow">
           <div class="row align-items-center">
-            <h2 class="mt-5 text-center"><strong>Contacts</strong></h2>
-            <p class="text-center text-shadow text-white">
-              Whether it's for a project, collaboration, or just to say hi — I'd
-              love to connect!
+            <h2 class="mt-5 text-center">
+              <strong data-i18n="contacts.title">Contacto</strong>
+            </h2>
+            <p
+              class="text-center text-shadow text-white"
+              data-i18n="contacts.subtitle"
+            >
+              Seja para um projeto, colaboração ou apenas para dizer olá,
+              adoraria conectar-me!
             </p>
           </div>
 
@@ -537,22 +633,29 @@
             class="mt-4"
           >
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Email address</label
+              <label
+                for="exampleFormControlInput1"
+                class="form-label"
+                data-i18n="contacts.emailLabel"
+                >Endereço de email</label
               >
               <input
                 type="email"
                 name="email"
                 class="form-control"
                 id="exampleFormControlInput1"
-                placeholder="name@example.com"
+                placeholder="nome@exemplo.com"
+                data-i18n-placeholder="contacts.emailPlaceholder"
                 required
               />
             </div>
 
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Message</label
+              <label
+                for="exampleFormControlTextarea1"
+                class="form-label"
+                data-i18n="contacts.messageLabel"
+                >Mensagem</label
               >
               <textarea
                 name="message"
@@ -564,7 +667,8 @@
             </div>
 
             <button type="submit" class="btn btn-outline-light mt-3">
-              Send <i class="bi bi-send"></i>
+              <span data-i18n="contacts.send">Enviar</span>
+              <i class="bi bi-send"></i>
             </button>
           </form>
 
@@ -601,7 +705,9 @@
       </section>
     </div>
     <footer class="text-white text-center bg-dark">
-      Copyright © 2025 Simão Rodrigues. All Rights Reserved.
+      <span data-i18n="footer.copyright"
+        >Copyright © 2025 Simão Rodrigues. Todos os direitos reservados.</span
+      >
     </footer>
   </body>
   <script src="js/script.js"></script>
