@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "socials.linkedin": "Linkedin",
       "socials.github": "Github",
       "hero.line1": "I'm",
-      "hero.line2.prefix": "and I'm a future",
+      "hero.line2.prefix": "and I'm a",
       "hero.line2.role": "Software Developer",
       "about.title": "About me",
-      "about.location": "Based in Setúbal, Portugal",
+      "about.location": "Setúbal, Portugal",
       "about.paragraph1":
         "Hello! My name is Simão Rodrigues and I am a second-year student in the Bachelor's degree in Computer Engineering and Multimedia at ISEL. I have a strong interest in software development and in creating creative solutions that have a real impact. This portfolio is my space to share projects, skills, and experiences in the technological field.",
       "about.goal.prefix": "My goal is to continuously grow as a",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "about.goal.suffix":
         "focusing on good programming practices, innovation, and teamwork. I am always motivated to learn new technologies and contribute to challenging projects.",
       "about.cvPrompt":
-        "Would you like to learn more about me? Download my CV.",
+        "Would you like to learn more about me? Download my CV!",
       "skills.title": "Skills",
       "skills.subtitle":
         "Which programming languages do I have the most knowledge in?",
@@ -85,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "socials.linkedin": "Linkedin",
       "socials.github": "Github",
       "hero.line1": "Eu sou o",
-      "hero.line2.prefix": "e sou um futuro",
+      "hero.line2.prefix": "e sou",
       "hero.line2.role": "Desenvolvedor de Software",
       "about.title": "Sobre mim",
-      "about.location": "Baseado em Setúbal, Portugal",
+      "about.location": "Setúbal, Portugal",
       "about.paragraph1":
         "Olá! O meu nome é Simão Rodrigues e sou estudante do segundo ano da Licenciatura em Engenharia Informática e Multimédia no ISEL. Tenho um forte interesse no desenvolvimento de software e em criar soluções criativas com impacto real. Este portefólio é o meu espaço para partilhar projetos, competências e experiências na área tecnológica.",
       "about.goal.prefix": "O meu objetivo é crescer continuamente como",
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "about.goal.suffix":
         "focando-me em boas práticas de programação, inovação e trabalho em equipa. Estou sempre motivado para aprender novas tecnologias e contribuir para projetos desafiantes.",
       "about.cvPrompt":
-        "Gostaria de saber mais sobre mim? Descarregue o meu CV.",
+        "Gostaria de saber mais sobre mim? Descarregue o meu CV!",
       "skills.title": "Competências",
       "skills.subtitle":
         "Em que linguagens de programação tenho mais conhecimentos?",
