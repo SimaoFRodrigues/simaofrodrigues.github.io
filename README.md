@@ -14,7 +14,8 @@ This website was built using **HTML, CSS, and JavaScript (client-side only)**, w
 ## 🧩 Technologies Used
 
 - **HTML5** – Website structure  
-- **CSS3** – Styling and visual customization  
+- **CSS3** – Styling and visual customization
+- **Javascript** - Language changing
 - **Bootstrap 5** – Responsive layout and components  
 - **Formspree.io** – Contact form submission management  
 
