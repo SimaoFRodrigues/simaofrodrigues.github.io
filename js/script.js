@@ -1,25 +1,45 @@
+// Redesign do Portefólio de Simão Rodrigues
+// Mantém o projeto em JavaScript puro: traduções, navbar dinâmica,
+// animações por scroll e botão de voltar ao topo.
+
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".to-top");
+  const navbar = document.querySelector(".site-navbar");
+  const toTopButton = document.querySelector(".to-top");
   const languageButtons = document.querySelectorAll(".lang-btn");
+  const offcanvasElement = document.querySelector("#offcanvasNavbar");
+  const navLinks = document.querySelectorAll(
+    ".site-offcanvas .nav-link[href^='#']",
+  );
+  const currentYear = new Date().getFullYear();
 
   const translations = {
     en: {
-      "page.title": "Simão's Portfolio",
+      "accessibility.skip": "Skip to main content",
+      "page.title": "Simão Rodrigues | Portfolio",
       "nav.home": "Home",
       "nav.about": "About",
       "nav.skills": "Skills",
       "nav.projects": "Projects",
       "nav.contacts": "Contact",
       "nav.socials": "Socials",
-      "nav.languageAria": "Language selector",
       "nav.languagePt": "Portuguese (Portugal)",
       "nav.languageEn": "English",
       "socials.instagram": "Instagram",
-      "socials.linkedin": "Linkedin",
-      "socials.github": "Github",
-      "hero.line1": "I'm",
-      "hero.line2.prefix": "and I'm a",
+      "socials.linkedin": "LinkedIn",
+      "socials.github": "GitHub",
+      "hero.kicker": "Personal portfolio",
+      "hero.line1": "I am",
+      "hero.line2.prefix": "and I am a",
       "hero.line2.role": "Software Developer",
+      "hero.description":
+        "Computer Engineering and Multimedia student at ISEL, focused on software development, web interfaces and creative solutions with real impact.",
+      "hero.projectsBtn": "View projects",
+      "hero.contactBtn": "Contact me",
+      "hero.available": "Available to collaborate and learn",
+      "hero.stats.projects": "Projects",
+      "hero.stats.areas": "Technical areas",
+      "hero.stats.language": "Languages",
+      "about.eyebrow": "Who I am",
       "about.title": "About me",
       "about.location": "Setúbal, Portugal",
       "about.paragraph1":
@@ -30,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "focusing on good programming practices, innovation, and teamwork. I am always motivated to learn new technologies and contribute to challenging projects.",
       "about.cvPrompt":
         "Would you like to learn more about me? Download my CV!",
+      "about.badge": "ISEL · CEM",
+      "skills.eyebrow": "Technical stack",
       "skills.title": "Skills",
       "skills.subtitle":
         "Which programming languages do I have the most knowledge in?",
@@ -37,42 +59,45 @@ document.addEventListener("DOMContentLoaded", () => {
         "Knowledge in syntax, OOP, and good programming practices for academic and personal projects.",
       "skills.python":
         "Experience in data science projects involving datasets, OOP, and data visualization.",
-      "skills.webTitle": "HTML, CSS and JavaScript",
+      "skills.webTitle": "JavaScript",
       "skills.web":
-        "Web development using Bootstrap, DOM manipulation and event handling.",
+        "Web development using HTML and CSS, also using Bootstrap, DOM manipulation and event handling.",
       "skills.arduino":
         "Development of system prototypes with sensors, LEDs, and microcontrollers.",
+      "comp.subtitle": "Other skills:",
+      "projects.eyebrow": "Selected work",
       "projects.title": "Projects",
       "projects.subtitle":
-        "Below you can find some of the projects I have worked on, both academic and personal",
+        "Main projects and smaller technical experiments developed throughout my academic path.",
+      "projects.open": "Open project",
       "projects.audio.title": "Audio Visualization System",
       "projects.audio.desc":
-        "Web App developed in JavaScript, HTML and CSS, with multiple audio visualizations for your music/voice.",
+        "Small web project developed in JavaScript, HTML and CSS to explore simple audio visualizations, with direct access to the demo.",
       "projects.workorder.title": "Work Order Management System",
       "projects.workorder.desc":
-        "Developed in Java for desktop, including a Login Screen and a MySQL database",
+        "Developed in Java for desktop, including a login screen and a MySQL database.",
       "projects.elections.title": "Portugal Elections Dashboard",
       "projects.elections.desc":
-        "2024 Portugal Elections Dashboard implemented in Quarto",
+        "2024 Portugal Elections Dashboard implemented in Quarto.",
       "projects.tasks.title": "Personal Task Manager",
       "projects.tasks.desc":
-        "Personal task manager in Java for desktop, with a Login system implemented in Java Swing",
-      "projects.smart.title": "Smart Access Control",
+        "Personal task manager in Java for desktop, with a login system implemented in Java Swing.",
+      "projects.smart.title": "Task API REST with Spring Boot",
       "projects.smart.desc":
-        "Simulation of a Smart Access Control system for the Lisbon Metro, implemented in Arduino.",
-      "carousel.prev": "Previous",
-      "carousel.next": "Next",
+        "REST API for task management, built with Spring Boot and structured in layers. It allows CRUD operations through HTTP endpoints, applying separation of responsibilities between Controller, Service, Repository and DTOs.",
+      "contacts.eyebrow": "Let's talk?",
       "contacts.title": "Contact",
       "contacts.subtitle":
-        "Whether it's for a project, collaboration, or just to say hi, I'd love to connect!",
+        "Whether it is for a project, collaboration, or just to say hi, I would love to connect!",
       "contacts.emailLabel": "Email address",
       "contacts.emailPlaceholder": "name@example.com",
       "contacts.messageLabel": "Message",
       "contacts.send": "Send",
-      "footer.copyright":
-        "Copyright © 2025 Simão Rodrigues. All Rights Reserved.",
+      "footer.copyright": `Copyright © ${currentYear} Simão Rodrigues. All Rights Reserved.`,
     },
     pt: {
+      "accessibility.skip": "Saltar para o conteúdo principal",
+      "page.title": "Simão Rodrigues | Portefólio",
       "nav.home": "Início",
       "nav.about": "Sobre",
       "nav.skills": "Competências",
@@ -82,11 +107,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.languagePt": "Português (Portugal)",
       "nav.languageEn": "Inglês",
       "socials.instagram": "Instagram",
-      "socials.linkedin": "Linkedin",
-      "socials.github": "Github",
+      "socials.linkedin": "LinkedIn",
+      "socials.github": "GitHub",
+      "hero.kicker": "Portefólio pessoal",
       "hero.line1": "Eu sou o",
       "hero.line2.prefix": "e sou",
       "hero.line2.role": "Desenvolvedor de Software",
+      "hero.description":
+        "Estudante de Engenharia Informática e Multimédia no ISEL, focado em desenvolvimento de software, interfaces web e soluções criativas com impacto real.",
+      "hero.projectsBtn": "Ver projetos",
+      "hero.contactBtn": "Contactar",
+      "hero.available": "Disponível para colaborar e aprender",
+      "hero.stats.projects": "Projetos",
+      "hero.stats.areas": "Áreas técnicas",
+      "hero.stats.language": "Idiomas",
+      "about.eyebrow": "Quem sou",
       "about.title": "Sobre mim",
       "about.location": "Setúbal, Portugal",
       "about.paragraph1":
@@ -97,6 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "focando-me em boas práticas de programação, inovação e trabalho em equipa. Estou sempre motivado para aprender novas tecnologias e contribuir para projetos desafiantes.",
       "about.cvPrompt":
         "Gostaria de saber mais sobre mim? Descarregue o meu CV!",
+      "about.badge": "ISEL · LEIM",
+      "skills.eyebrow": "Stack técnica",
       "skills.title": "Competências",
       "skills.subtitle":
         "Em que linguagens de programação tenho mais conhecimentos?",
@@ -104,45 +141,46 @@ document.addEventListener("DOMContentLoaded", () => {
         "Conhecimentos de sintaxe, OOP e boas práticas de programação para projetos académicos e pessoais.",
       "skills.python":
         "Experiência em projetos de ciência de dados com datasets, OOP e visualização de dados.",
-      "skills.webTitle": "HTML, CSS e JavaScript",
+      "skills.webTitle": "JavaScript",
       "skills.web":
-        "Desenvolvimento web com Bootstrap, manipulação do DOM e tratamento de eventos.",
+        "Desenvolvimento web com HTML e CSS, e com recurso a Bootstrap, manipulação do DOM e tratamento de eventos.",
       "skills.arduino":
         "Desenvolvimento de protótipos de sistemas com sensores, LEDs e microcontroladores.",
+      "comp.subtitle": "Outras competências:",
+      "projects.eyebrow": "Trabalho desenvolvido",
       "projects.title": "Projetos",
       "projects.subtitle":
-        "Abaixo pode encontrar alguns dos projetos em que trabalhei, tanto académicos como pessoais",
+        "Projetos principais e pequenas experiências técnicas desenvolvidas ao longo do meu percurso académico.",
+      "projects.open": "Abrir projeto",
       "projects.audio.title": "Sistema de Visualização Áudio",
       "projects.audio.desc":
-        "Aplicação web desenvolvida em JavaScript, HTML e CSS, com várias visualizações de áudio para a sua música/voz.",
+        "Pequeno projeto web desenvolvido em JavaScript, HTML e CSS para explorar visualizações simples de áudio, com acesso direto à demonstração.",
       "projects.workorder.title": "Sistema de Gestão de Ordens de Trabalho",
       "projects.workorder.desc":
-        "Desenvolvido em Java para desktop, incluindo um ecrã de login e uma base de dados MySQL",
+        "Desenvolvido em Java para desktop, incluindo um ecrã de login e uma base de dados MySQL.",
       "projects.elections.title": "Dashboard das Eleições em Portugal",
       "projects.elections.desc":
-        "Dashboard das Eleições de 2024 em Portugal implementado em Quarto",
+        "Dashboard das Eleições de 2024 em Portugal implementado em Quarto.",
       "projects.tasks.title": "Gestor de Tarefas Pessoal",
       "projects.tasks.desc":
-        "Gestor de tarefas pessoal em Java para desktop, com sistema de login implementado em Java Swing",
-      "projects.smart.title": "Controlo de Acesso Inteligente",
+        "Gestor de tarefas pessoal em Java para desktop, com sistema de login implementado em Java Swing.",
+      "projects.smart.title": "API REST de Tarefas com Spring Boot",
       "projects.smart.desc":
-        "Simulação de um sistema de controlo de acesso inteligente para o Metro de Lisboa, implementado em Arduino.",
-      "carousel.prev": "Anterior",
-      "carousel.next": "Seguinte",
+        "API REST para gestão de tarefas, construída com Spring Boot e estruturada em camadas. Permite realizar operações CRUD através de endpoints HTTP, aplicando separação de responsabilidades entre Controller, Service, Repository e DTOs.",
+      "contacts.eyebrow": "Vamos falar?",
       "contacts.title": "Contacto",
       "contacts.subtitle":
-        "Seja para um projeto, colaboração ou apenas para dizer olá, adoraria conectar-me!",
+        "Seja para um projeto, colaboração ou apenas para dizer olá!",
       "contacts.emailLabel": "Endereço de email",
       "contacts.emailPlaceholder": "nome@exemplo.com",
       "contacts.messageLabel": "Mensagem",
       "contacts.send": "Enviar",
-      "footer.copyright":
-        "Copyright © 2025 Simão Rodrigues. Todos os direitos reservados.",
+      "footer.copyright": `Copyright © ${currentYear} Simão Rodrigues. Todos os direitos reservados.`,
     },
   };
 
   const applyTranslations = (language) => {
-    const dictionary = translations[language] || translations.en;
+    const dictionary = translations[language] || translations.pt;
 
     document.documentElement.lang = language === "pt" ? "pt-PT" : "en";
     document.title = dictionary["page.title"] || document.title;
@@ -171,13 +209,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setActiveLanguage = (language) => {
     languageButtons.forEach((button) => {
-      const isActive = button.dataset.lang === language;
-      button.classList.toggle("is-active", isActive);
+      button.classList.toggle("is-active", button.dataset.lang === language);
     });
   };
 
-  const storedLanguage = localStorage.getItem("siteLanguage");
-  const initialLanguage = storedLanguage || "pt";
+  const updateNavbarState = () => {
+    const isScrolled = window.scrollY > 20;
+    navbar?.classList.toggle("is-scrolled", isScrolled);
+    toTopButton?.classList.toggle("show", window.scrollY > 420);
+  };
+
+  const revealElements = () => {
+    const elements = document.querySelectorAll(".reveal-on-scroll");
+
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+  };
+
+  const closeMobileMenuOnNavigation = () => {
+    if (!offcanvasElement || typeof bootstrap === "undefined") return;
+
+    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 992) {
+          offcanvas.hide();
+        }
+      });
+    });
+  };
 
   languageButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -188,14 +264,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  applyTranslations(initialLanguage);
-  setActiveLanguage(initialLanguage);
-
-  window.addEventListener("scroll", () => {
-    btn.classList.toggle("show", window.scrollY > 300);
-  });
-
-  btn.addEventListener("click", () => {
+  toTopButton?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  window.addEventListener("scroll", updateNavbarState, { passive: true });
+
+  const initialLanguage = localStorage.getItem("siteLanguage") || "pt";
+  applyTranslations(initialLanguage);
+  setActiveLanguage(initialLanguage);
+  updateNavbarState();
+  revealElements();
+  closeMobileMenuOnNavigation();
 });
