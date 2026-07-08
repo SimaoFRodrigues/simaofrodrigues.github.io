@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const languageButtons = document.querySelectorAll(".lang-btn");
   const offcanvasElement = document.querySelector("#offcanvasNavbar");
   const navLinks = document.querySelectorAll(
-    ".site-offcanvas .nav-link[href^='#']",
+    ".site-offcanvas .nav-link[href^='#']:not(.dropdown-toggle)",
   );
   const currentYear = new Date().getFullYear();
 
@@ -252,6 +252,13 @@ document.addEventListener("DOMContentLoaded", () => {
           offcanvas.hide();
         }
       });
+    });
+
+    const dropdownToggle = offcanvasElement.querySelector(".dropdown-toggle");
+    dropdownToggle?.addEventListener("click", (event) => {
+      if (window.innerWidth < 992) {
+        event.stopPropagation();
+      }
     });
   };
 
