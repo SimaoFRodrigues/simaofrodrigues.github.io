@@ -242,14 +242,40 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach((element) => observer.observe(element));
   };
 
+  const getNavbarOffset = () => {
+    const navbarHeight = navbar?.getBoundingClientRect().height || 0;
+    return Math.ceil(navbarHeight + 32);
+  };
+
+  const scrollToSection = (targetId) => {
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    const targetTop =
+      target.getBoundingClientRect().top + window.scrollY - getNavbarOffset();
+
+    window.scrollTo({
+      top: Math.max(targetTop, 0),
+      behavior: "smooth",
+    });
+  };
+
   const closeMobileMenuOnNavigation = () => {
     if (!offcanvasElement || typeof bootstrap === "undefined") return;
 
     const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (event) => {
         if (window.innerWidth < 992) {
-          offcanvas.hide();
+          const targetId = link.getAttribute("href");
+
+          if (targetId && targetId.startsWith("#")) {
+            event.preventDefault();
+            scrollToSection(targetId);
+            history.pushState(null, "", targetId);
+          }
+
+          window.setTimeout(() => offcanvas.hide(), 120);
         }
       });
     });
