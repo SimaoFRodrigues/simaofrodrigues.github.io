@@ -820,8 +820,14 @@ button.nav-link {
     margin-inline: auto;
   }
 
+  .hero-section .col-lg-5 {
+    display: flex;
+    justify-content: center;
+  }
+
   .profile-card {
     width: min(300px, 78vw);
+    margin-inline: auto;
     margin-top: 0.75rem;
     transform: none;
   }
