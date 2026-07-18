@@ -207,7 +207,7 @@ button.nav-link {
   min-height: 100vh;
   min-height: 100svh;
   padding-top: var(--hero-top-padding);
-  background: url("../images/back-dev.png") center/cover no-repeat;
+  background: url("../images/back-dev.webp") center/cover no-repeat;
   overflow: hidden;
 }
 
